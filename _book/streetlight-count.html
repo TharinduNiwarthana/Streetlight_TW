@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Streetlight count | Streetlight and Transport Walking</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Streetlight count | Streetlight and Transport Walking" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Streetlight count | Streetlight and Transport Walking" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Tharindu Bandara" />
+
+
+<meta name="date" content="2024-03-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="sample-profile.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Data preparation</a></li>
+<li class="chapter" data-level="2" data-path="streetlight-count.html"><a href="streetlight-count.html"><i class="fa fa-check"></i><b>2</b> Streetlight count</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="streetlight-count.html"><a href="streetlight-count.html#descriptives"><i class="fa fa-check"></i><b>2.1</b> Descriptives</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="streetlight-count.html"><a href="streetlight-count.html#descriptive-statistics-of-streetlight-counts-at-each-wave."><i class="fa fa-check"></i><b>2.1.1</b> Descriptive statistics of Streetlight counts at each wave.</a></li>
+<li class="chapter" data-level="2.1.2" data-path="streetlight-count.html"><a href="streetlight-count.html#distribution"><i class="fa fa-check"></i><b>2.1.2</b> Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="streetlight-count.html"><a href="streetlight-count.html#one-way-anova-tests"><i class="fa fa-check"></i><b>2.2</b> One-way ANOVA tests</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sample-profile.html"><a href="sample-profile.html"><i class="fa fa-check"></i><b>3</b> Sample Profile</a></li>
+<li class="chapter" data-level="4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html"><i class="fa fa-check"></i><b>4</b> Cross Sectional Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-1---2007"><i class="fa fa-check"></i><b>4.1</b> Wave 1 - 2007</a></li>
+<li class="chapter" data-level="4.2" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-2---2009"><i class="fa fa-check"></i><b>4.2</b> Wave 2 - 2009</a></li>
+<li class="chapter" data-level="4.3" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-3---2011"><i class="fa fa-check"></i><b>4.3</b> Wave 3 - 2011</a></li>
+<li class="chapter" data-level="4.4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-4---2013"><i class="fa fa-check"></i><b>4.4</b> Wave 4 - 2013</a></li>
+<li class="chapter" data-level="4.5" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-5---2016"><i class="fa fa-check"></i><b>4.5</b> Wave 5 - 2016</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="longitudinal-analysis.html"><a href="longitudinal-analysis.html"><i class="fa fa-check"></i><b>5</b> Longitudinal Analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Streetlight and Transport Walking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="streetlight-count" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Streetlight count<a href="streetlight-count.html#streetlight-count" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Streetlights is the built environment attribute of interest.
+- Street light BE attribute is measured as 1km network buffer of residence.</p>
+<div id="descriptives" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Descriptives<a href="streetlight-count.html#descriptives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="descriptive-statistics-of-streetlight-counts-at-each-wave." class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Descriptive statistics of Streetlight counts at each wave.<a href="streetlight-count.html#descriptive-statistics-of-streetlight-counts-at-each-wave." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!-- Streetlight summary table -->
+<table class="table lightable-classic lightable-hover" style="font-size: 15px; margin-left: auto; margin-right: auto; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Streetlight summary
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+2007
+</th>
+<th style="text-align:right;">
+2009
+</th>
+<th style="text-align:right;">
+2011
+</th>
+<th style="text-align:right;">
+2013
+</th>
+<th style="text-align:right;">
+2016
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Min.
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1st Qu.
+</td>
+<td style="text-align:right;">
+172.0000
+</td>
+<td style="text-align:right;">
+165.0000
+</td>
+<td style="text-align:right;">
+200.0000
+</td>
+<td style="text-align:right;">
+215.0000
+</td>
+<td style="text-align:right;">
+214.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Median
+</td>
+<td style="text-align:right;">
+254.5000
+</td>
+<td style="text-align:right;">
+252.0000
+</td>
+<td style="text-align:right;">
+285.0000
+</td>
+<td style="text-align:right;">
+296.0000
+</td>
+<td style="text-align:right;">
+302.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mean
+</td>
+<td style="text-align:right;">
+264.8033
+</td>
+<td style="text-align:right;">
+254.7097
+</td>
+<td style="text-align:right;">
+290.1867
+</td>
+<td style="text-align:right;">
+302.0529
+</td>
+<td style="text-align:right;">
+306.6352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3rd Qu.
+</td>
+<td style="text-align:right;">
+347.0000
+</td>
+<td style="text-align:right;">
+349.0000
+</td>
+<td style="text-align:right;">
+371.0000
+</td>
+<td style="text-align:right;">
+382.0000
+</td>
+<td style="text-align:right;">
+389.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Max
+</td>
+<td style="text-align:right;">
+1159.0000
+</td>
+<td style="text-align:right;">
+1170.0000
+</td>
+<td style="text-align:right;">
+1226.0000
+</td>
+<td style="text-align:right;">
+1232.0000
+</td>
+<td style="text-align:right;">
+1264.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Missing
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+2760.0000
+</td>
+<td style="text-align:right;">
+3637.0000
+</td>
+<td style="text-align:right;">
+4002.0000
+</td>
+<td style="text-align:right;">
+5078.0000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="distribution" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Distribution<a href="streetlight-count.html#distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!-- Plots of Streetlight counts -->
+<p><img src="_main_files/figure-html/plots-1.png" width="672" /><img src="_main_files/figure-html/plots-2.png" width="672" /></p>
+<p>There were 13 participants having grater than 1000 streetlight counts, others have less than 800 streetlight counts.
+Following plots are without these participants.
+<!-- Plots of Streetlight counts without outliers -->
+<img src="_main_files/figure-html/plots-w/o-outliers-1.png" width="672" /><img src="_main_files/figure-html/plots-w/o-outliers-2.png" width="672" /></p>
+</div>
+</div>
+<div id="one-way-anova-tests" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> One-way ANOVA tests<a href="streetlight-count.html#one-way-anova-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!-- One way ANOVA test 1 -->
+<pre><code>##               Df    Sum Sq  Mean Sq F value Pr(&gt;F)    
+## habneigh1      1  39020790 39020790    3325 &lt;2e-16 ***
+## Residuals   8708 102180176    11734                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>ANOVA test for Log transformed streetlight counts
+<!-- One way ANOVA test 2 --></p>
+<pre><code>##               Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## habneigh1      1    731   730.6    1818 &lt;2e-16 ***
+## Residuals   8667   3483     0.4                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Following one-way ANOVA tests without the 13 records</p>
+<!-- One way ANOVA test 3 -->
+<pre><code>##               Df   Sum Sq  Mean Sq F value Pr(&gt;F)    
+## habneigh1      1 36284234 36284234    3298 &lt;2e-16 ***
+## Residuals   8695 95650812    11001                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>ANOVA test for Log transformed streetlight counts
+<!-- One way ANOVA test 4 --></p>
+<pre><code>##               Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## habneigh1      1    711   710.7    1772 &lt;2e-16 ***
+## Residuals   8654   3471     0.4                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+<!-- ########################   Chapter 02  ################################ -->
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sample-profile.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

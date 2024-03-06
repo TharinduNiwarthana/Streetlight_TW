@@ -1,0 +1,288 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Streetlight and Transport Walking},
+  pdfauthor={Tharindu Bandara},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Streetlight and Transport Walking}
+\author{Tharindu Bandara}
+\date{2024-03-06}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{data-preparation}{%
+\chapter{Data preparation}\label{data-preparation}}
+
+The same steps followed as Gavin did for his 2014 paper (chapter 3).
+
+\begin{itemize}
+\tightlist
+\item
+  Excluded the participants who moved residence in between surveys
+\item
+  Excluded the respondents who were not the same person at each wave
+\item
+  Excluded the respondents who had missing values for transport walking for all waves
+\item
+  Excluded the participants who had missing values for education
+\item
+  Excluded the participants who couldn't be assigned a neighbouhood disadvantage score (0)
+\end{itemize}
+
+\hypertarget{streetlight-count}{%
+\chapter{Streetlight count}\label{streetlight-count}}
+
+Streetlights is the built environment attribute of interest.
+- Street light BE attribute is measured as 1km network buffer of residence.
+
+\hypertarget{descriptives}{%
+\section{Descriptives}\label{descriptives}}
+
+\hypertarget{descriptive-statistics-of-streetlight-counts-at-each-wave.}{%
+\subsection{Descriptive statistics of Streetlight counts at each wave.}\label{descriptive-statistics-of-streetlight-counts-at-each-wave.}}
+
+\begin{table}
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{5}{c}{Streetlight summary} \\
+\cmidrule(l{3pt}r{3pt}){2-6}
+  & 2007 & 2009 & 2011 & 2013 & 2016\\
+\midrule
+Min. & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000\\
+1st Qu. & 172.0000 & 165.0000 & 200.0000 & 215.0000 & 214.0000\\
+Median & 254.5000 & 252.0000 & 285.0000 & 296.0000 & 302.0000\\
+Mean & 264.8033 & 254.7097 & 290.1867 & 302.0529 & 306.6352\\
+3rd Qu. & 347.0000 & 349.0000 & 371.0000 & 382.0000 & 389.0000\\
+\addlinespace
+Max & 1159.0000 & 1170.0000 & 1226.0000 & 1232.0000 & 1264.0000\\
+Missing & 0.0000 & 2760.0000 & 3637.0000 & 4002.0000 & 5078.0000\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{distribution}{%
+\subsection{Distribution}\label{distribution}}
+
+\includegraphics{_main_files/figure-latex/plots-1.pdf} \includegraphics{_main_files/figure-latex/plots-2.pdf}
+
+There were 13 participants having grater than 1000 streetlight counts, others have less than 800 streetlight counts.
+Following plots are without these participants.
+\includegraphics{_main_files/figure-latex/plots-w/o-outliers-1.pdf} \includegraphics{_main_files/figure-latex/plots-w/o-outliers-2.pdf}
+
+\hypertarget{one-way-anova-tests}{%
+\section{One-way ANOVA tests}\label{one-way-anova-tests}}
+
+\begin{verbatim}
+##               Df    Sum Sq  Mean Sq F value Pr(>F)    
+## habneigh1      1  39020790 39020790    3325 <2e-16 ***
+## Residuals   8708 102180176    11734                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+ANOVA test for Log transformed streetlight counts
+
+\begin{verbatim}
+##               Df Sum Sq Mean Sq F value Pr(>F)    
+## habneigh1      1    731   730.6    1818 <2e-16 ***
+## Residuals   8667   3483     0.4                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+Following one-way ANOVA tests without the 13 records
+
+\begin{verbatim}
+##               Df   Sum Sq  Mean Sq F value Pr(>F)    
+## habneigh1      1 36284234 36284234    3298 <2e-16 ***
+## Residuals   8695 95650812    11001                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+ANOVA test for Log transformed streetlight counts
+
+\begin{verbatim}
+##               Df Sum Sq Mean Sq F value Pr(>F)    
+## habneigh1      1    711   710.7    1772 <2e-16 ***
+## Residuals   8654   3471     0.4                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\hypertarget{sample-profile}{%
+\chapter{Sample Profile}\label{sample-profile}}
+
+\begin{table}
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{5}{c}{Never-walkers} \\
+\cmidrule(l{3pt}r{3pt}){2-6}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{2007} & \multicolumn{1}{c}{2009} & \multicolumn{1}{c}{2011} & \multicolumn{1}{c}{2013} & \multicolumn{1}{c}{2016} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4} \cmidrule(l{3pt}r{3pt}){5-5} \cmidrule(l{3pt}r{3pt}){6-6}
+  & \% & \% & \% & \% & \%\\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Sex}}\\
+\hspace{1em}Male & 63.7 & 60.8 & 60.4 & 58.7 & 55.1\\
+\hspace{1em}Female & 66.7 & 63.2 & 64.1 & 64.1 & 60.5\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Age group}}\\
+\hspace{1em}40–44 years & 61.3 & 59.1 & 58.0 & 57.5 & 52.7\\
+\hspace{1em}45–49 years & 64.4 & 60.3 & 58.7 & 55.8 & 53.0\\
+\hspace{1em}50–54 years & 66.7 & 62.3 & 64.5 & 64.9 & 59.3\\
+\hspace{1em}55–59 years & 66.7 & 62.9 & 65.5 & 62.9 & 61.7\\
+\hspace{1em}60 and above & 69.4 & 67.0 & 66.3 & 68.7 & 65.4\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Neighbourhood disadvantage}}\\
+\hspace{1em}Q5 (Least disadvantaged) & 67.3 & 64.0 & 64.6 & 61.6 & 57.2\\
+\hspace{1em}Q4 & 67.3 & 64.2 & 64.4 & 62.4 & 60.6\\
+\hspace{1em}Q3 & 65.2 & 60.3 & 61.4 & 60.4 & 57.8\\
+\hspace{1em}Q2 & 63.4 & 60.3 & 60.0 & 62.4 & 57.2\\
+\hspace{1em}Q1 (Most disadvantaged) & 61.9 & 60.2 & 60.3 & 61.8 & 57.4\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Heighest attained education}}\\
+\hspace{1em}Bachelor’s degree or higher & 56.8 & 53.0 & 54.2 & 52.4 & 48.8\\
+\hspace{1em}Diploma/Associate diploma & 63.7 & 61.2 & 59.5 & 60.5 & 58.4\\
+\hspace{1em}Vocational (trade/business) & 69.6 & 66.1 & 66.5 & 67.3 & 65.3\\
+\hspace{1em}School & 70.7 & 68.4 & 69.0 & 68.6 & 65.3\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Occupation}}\\
+\hspace{1em}Managers \& Professionals & 61.7 & 57.2 & 56.5 & 55.9 & 51.0\\
+\hspace{1em}White collar & 65.0 & 62.2 & 63.4 & 64.0 & 59.7\\
+\hspace{1em}Blue Collar & 74.2 & 72.5 & 71.9 & 68.7 & 68.0\\
+\hspace{1em}Home duties & 71.1 & 68.3 & 73.4 & 69.1 & 70.0\\
+\hspace{1em}Retired & 69.5 & 65.4 & 64.7 & 65.1 & 65.1\\
+\hspace{1em}Missing (includes NEC) & 60.6 & 58.0 & 59.5 & 60.4 & 56.9\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Household income}}\\
+\hspace{1em}\$130,000 pa or more & 64.7 & 61.1 & 59.5 & 57.8 & 54.3\\
+\hspace{1em}\$72,800 - \$129,999 & 64.0 & 60.2 & 61.6 & 60.4 & 53.4\\
+\hspace{1em}\$52,000 - \$72,799 & 63.8 & 60.7 & 64.1 & 63.5 & 61.4\\
+\hspace{1em}\$26,000 - \$51,999 & 67.2 & 64.7 & 64.6 & 63.7 & 64.4\\
+\hspace{1em}\$0 - \$25,999 & 62.1 & 62.0 & 61.8 & 61.7 & 63.4\\
+\hspace{1em}Missing & 70.0 & 65.4 & 64.2 & 66.0 & 60.2\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{cross-sectional-analysis}{%
+\chapter{Cross Sectional Analysis}\label{cross-sectional-analysis}}
+
+\hypertarget{wave-1---2007}{%
+\section{Wave 1 - 2007}\label{wave-1---2007}}
+
+\hypertarget{wave-2---2009}{%
+\section{Wave 2 - 2009}\label{wave-2---2009}}
+
+\hypertarget{wave-3---2011}{%
+\section{Wave 3 - 2011}\label{wave-3---2011}}
+
+\hypertarget{wave-4---2013}{%
+\section{Wave 4 - 2013}\label{wave-4---2013}}
+
+\hypertarget{wave-5---2016}{%
+\section{Wave 5 - 2016}\label{wave-5---2016}}
+
+\hypertarget{longitudinal-analysis}{%
+\chapter{Longitudinal Analysis}\label{longitudinal-analysis}}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

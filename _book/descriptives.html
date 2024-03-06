@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Descriptives | Streetlight and Transport Walking</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Descriptives | Streetlight and Transport Walking" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Descriptives | Streetlight and Transport Walking" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Tharindu Bandara" />
+
+
+<meta name="date" content="2024-03-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="anova-test-for-streetlights.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Data preparation</a></li>
+<li class="chapter" data-level="2" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>2</b> Descriptives</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="descriptives.html"><a href="descriptives.html#sample-profile"><i class="fa fa-check"></i><b>2.1</b> Sample profile</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="anova-test-for-streetlights.html"><a href="anova-test-for-streetlights.html"><i class="fa fa-check"></i><b>3</b> ANOVA test for streetlights</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="anova-test-for-streetlights.html"><a href="anova-test-for-streetlights.html#analysis-without-outliers"><i class="fa fa-check"></i><b>3.1</b> Analysis without outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html"><i class="fa fa-check"></i><b>4</b> Cross Sectional Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-1---2007"><i class="fa fa-check"></i><b>4.1</b> Wave 1 - 2007</a></li>
+<li class="chapter" data-level="4.2" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-2---2009"><i class="fa fa-check"></i><b>4.2</b> Wave 2 - 2009</a></li>
+<li class="chapter" data-level="4.3" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-3---2011"><i class="fa fa-check"></i><b>4.3</b> Wave 3 - 2011</a></li>
+<li class="chapter" data-level="4.4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-4---2013"><i class="fa fa-check"></i><b>4.4</b> Wave 4 - 2013</a></li>
+<li class="chapter" data-level="4.5" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-5---2016"><i class="fa fa-check"></i><b>4.5</b> Wave 5 - 2016</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Streetlight and Transport Walking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="descriptives" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Descriptives<a href="descriptives.html#descriptives" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+Descriptive statistics of Streetlight counts at each wave.
+<!-- Streetlight summary table -->
+<table class="table lightable-classic lightable-hover" style="font-size: 15px; margin-left: auto; margin-right: auto; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Streetlight summary
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+2007
+</th>
+<th style="text-align:right;">
+2009
+</th>
+<th style="text-align:right;">
+2011
+</th>
+<th style="text-align:right;">
+2013
+</th>
+<th style="text-align:right;">
+2016
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Min.
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1st Qu.
+</td>
+<td style="text-align:right;">
+172.0000
+</td>
+<td style="text-align:right;">
+165.0000
+</td>
+<td style="text-align:right;">
+200.0000
+</td>
+<td style="text-align:right;">
+215.0000
+</td>
+<td style="text-align:right;">
+214.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Median
+</td>
+<td style="text-align:right;">
+254.5000
+</td>
+<td style="text-align:right;">
+252.0000
+</td>
+<td style="text-align:right;">
+285.0000
+</td>
+<td style="text-align:right;">
+296.0000
+</td>
+<td style="text-align:right;">
+302.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mean
+</td>
+<td style="text-align:right;">
+264.8033
+</td>
+<td style="text-align:right;">
+254.7097
+</td>
+<td style="text-align:right;">
+290.1867
+</td>
+<td style="text-align:right;">
+302.0529
+</td>
+<td style="text-align:right;">
+306.6352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3rd Qu.
+</td>
+<td style="text-align:right;">
+347.0000
+</td>
+<td style="text-align:right;">
+349.0000
+</td>
+<td style="text-align:right;">
+371.0000
+</td>
+<td style="text-align:right;">
+382.0000
+</td>
+<td style="text-align:right;">
+389.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Max
+</td>
+<td style="text-align:right;">
+1159.0000
+</td>
+<td style="text-align:right;">
+1170.0000
+</td>
+<td style="text-align:right;">
+1226.0000
+</td>
+<td style="text-align:right;">
+1232.0000
+</td>
+<td style="text-align:right;">
+1264.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Missing
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+2760.0000
+</td>
+<td style="text-align:right;">
+3637.0000
+</td>
+<td style="text-align:right;">
+4002.0000
+</td>
+<td style="text-align:right;">
+5078.0000
+</td>
+</tr>
+</tbody>
+</table>
+<div id="sample-profile" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Sample profile<a href="descriptives.html#sample-profile" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!-- Sample profile table -->
+<table class="table lightable-classic lightable-hover" style="font-size: 15px; margin-left: auto; margin-right: auto; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Never-walkers
+</div>
+</th>
+</tr>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+2007
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+2009
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+2011
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+2013
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+2016
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+%
+</th>
+<th style="text-align:right;">
+%
+</th>
+<th style="text-align:right;">
+%
+</th>
+<th style="text-align:right;">
+%
+</th>
+<th style="text-align:right;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="5">
+<td colspan="6" style="border-bottom: 1px solid;">
+<strong>Neighbourhood disadvantage</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Q5 (Least disadvantaged)
+</td>
+<td style="text-align:right;">
+67.3
+</td>
+<td style="text-align:right;">
+64.0
+</td>
+<td style="text-align:right;">
+64.6
+</td>
+<td style="text-align:right;">
+61.6
+</td>
+<td style="text-align:right;">
+57.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Q4
+</td>
+<td style="text-align:right;">
+67.3
+</td>
+<td style="text-align:right;">
+64.2
+</td>
+<td style="text-align:right;">
+64.4
+</td>
+<td style="text-align:right;">
+62.4
+</td>
+<td style="text-align:right;">
+60.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Q3
+</td>
+<td style="text-align:right;">
+65.2
+</td>
+<td style="text-align:right;">
+60.3
+</td>
+<td style="text-align:right;">
+61.4
+</td>
+<td style="text-align:right;">
+60.4
+</td>
+<td style="text-align:right;">
+57.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Q2
+</td>
+<td style="text-align:right;">
+63.4
+</td>
+<td style="text-align:right;">
+60.3
+</td>
+<td style="text-align:right;">
+60.0
+</td>
+<td style="text-align:right;">
+62.4
+</td>
+<td style="text-align:right;">
+57.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Q1 (Most disadvantaged)
+</td>
+<td style="text-align:right;">
+61.9
+</td>
+<td style="text-align:right;">
+60.2
+</td>
+<td style="text-align:right;">
+60.3
+</td>
+<td style="text-align:right;">
+61.8
+</td>
+<td style="text-align:right;">
+57.4
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="6" style="border-bottom: 1px solid;">
+<strong>Heighest attained education</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Bachelor’s degree or higher
+</td>
+<td style="text-align:right;">
+56.8
+</td>
+<td style="text-align:right;">
+53.0
+</td>
+<td style="text-align:right;">
+54.2
+</td>
+<td style="text-align:right;">
+52.4
+</td>
+<td style="text-align:right;">
+48.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Diploma/Associate diploma
+</td>
+<td style="text-align:right;">
+63.7
+</td>
+<td style="text-align:right;">
+61.2
+</td>
+<td style="text-align:right;">
+59.5
+</td>
+<td style="text-align:right;">
+60.5
+</td>
+<td style="text-align:right;">
+58.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Vocational (trade/business)
+</td>
+<td style="text-align:right;">
+69.6
+</td>
+<td style="text-align:right;">
+66.1
+</td>
+<td style="text-align:right;">
+66.5
+</td>
+<td style="text-align:right;">
+67.3
+</td>
+<td style="text-align:right;">
+65.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+School
+</td>
+<td style="text-align:right;">
+70.7
+</td>
+<td style="text-align:right;">
+68.4
+</td>
+<td style="text-align:right;">
+69.0
+</td>
+<td style="text-align:right;">
+68.6
+</td>
+<td style="text-align:right;">
+65.3
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="6" style="border-bottom: 1px solid;">
+<strong>Occupation</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Managers &amp; Professionals
+</td>
+<td style="text-align:right;">
+61.7
+</td>
+<td style="text-align:right;">
+57.2
+</td>
+<td style="text-align:right;">
+56.5
+</td>
+<td style="text-align:right;">
+55.9
+</td>
+<td style="text-align:right;">
+51.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+White collar
+</td>
+<td style="text-align:right;">
+65.0
+</td>
+<td style="text-align:right;">
+62.2
+</td>
+<td style="text-align:right;">
+63.4
+</td>
+<td style="text-align:right;">
+64.0
+</td>
+<td style="text-align:right;">
+59.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Blue Collar
+</td>
+<td style="text-align:right;">
+74.2
+</td>
+<td style="text-align:right;">
+72.5
+</td>
+<td style="text-align:right;">
+71.9
+</td>
+<td style="text-align:right;">
+68.7
+</td>
+<td style="text-align:right;">
+68.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Home duties
+</td>
+<td style="text-align:right;">
+71.1
+</td>
+<td style="text-align:right;">
+68.3
+</td>
+<td style="text-align:right;">
+73.4
+</td>
+<td style="text-align:right;">
+69.1
+</td>
+<td style="text-align:right;">
+70.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Retired
+</td>
+<td style="text-align:right;">
+69.5
+</td>
+<td style="text-align:right;">
+65.4
+</td>
+<td style="text-align:right;">
+64.7
+</td>
+<td style="text-align:right;">
+65.1
+</td>
+<td style="text-align:right;">
+65.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Missing (includes NEC)
+</td>
+<td style="text-align:right;">
+60.6
+</td>
+<td style="text-align:right;">
+58.0
+</td>
+<td style="text-align:right;">
+59.5
+</td>
+<td style="text-align:right;">
+60.4
+</td>
+<td style="text-align:right;">
+56.9
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="6" style="border-bottom: 1px solid;">
+<strong>Household income</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+$130,000 pa or more
+</td>
+<td style="text-align:right;">
+64.7
+</td>
+<td style="text-align:right;">
+61.1
+</td>
+<td style="text-align:right;">
+59.5
+</td>
+<td style="text-align:right;">
+57.8
+</td>
+<td style="text-align:right;">
+54.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+$72,800 - $129,999
+</td>
+<td style="text-align:right;">
+64.0
+</td>
+<td style="text-align:right;">
+60.2
+</td>
+<td style="text-align:right;">
+61.6
+</td>
+<td style="text-align:right;">
+60.4
+</td>
+<td style="text-align:right;">
+53.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+$52,000 - $72,799
+</td>
+<td style="text-align:right;">
+63.8
+</td>
+<td style="text-align:right;">
+60.7
+</td>
+<td style="text-align:right;">
+64.1
+</td>
+<td style="text-align:right;">
+63.5
+</td>
+<td style="text-align:right;">
+61.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+$26,000 - $51,999
+</td>
+<td style="text-align:right;">
+67.2
+</td>
+<td style="text-align:right;">
+64.7
+</td>
+<td style="text-align:right;">
+64.6
+</td>
+<td style="text-align:right;">
+63.7
+</td>
+<td style="text-align:right;">
+64.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+$0 - $25,999
+</td>
+<td style="text-align:right;">
+62.1
+</td>
+<td style="text-align:right;">
+62.0
+</td>
+<td style="text-align:right;">
+61.8
+</td>
+<td style="text-align:right;">
+61.7
+</td>
+<td style="text-align:right;">
+63.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Missing
+</td>
+<td style="text-align:right;">
+70.0
+</td>
+<td style="text-align:right;">
+65.4
+</td>
+<td style="text-align:right;">
+64.2
+</td>
+<td style="text-align:right;">
+66.0
+</td>
+<td style="text-align:right;">
+60.2
+</td>
+</tr>
+</tbody>
+</table>
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+<!-- ########################   Chapter 02  ################################ -->
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="anova-test-for-streetlights.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

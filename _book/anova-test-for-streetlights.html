@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 ANOVA test for streetlights | Streetlight and Transport Walking</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 ANOVA test for streetlights | Streetlight and Transport Walking" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 ANOVA test for streetlights | Streetlight and Transport Walking" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Tharindu Bandara" />
+
+
+<meta name="date" content="2024-03-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="descriptives.html"/>
+<link rel="next" href="cross-sectional-analysis.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Data preparation</a></li>
+<li class="chapter" data-level="2" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>2</b> Descriptives</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="descriptives.html"><a href="descriptives.html#sample-profile"><i class="fa fa-check"></i><b>2.1</b> Sample profile</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="anova-test-for-streetlights.html"><a href="anova-test-for-streetlights.html"><i class="fa fa-check"></i><b>3</b> ANOVA test for streetlights</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="anova-test-for-streetlights.html"><a href="anova-test-for-streetlights.html#analysis-without-outliers"><i class="fa fa-check"></i><b>3.1</b> Analysis without outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html"><i class="fa fa-check"></i><b>4</b> Cross Sectional Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-1---2007"><i class="fa fa-check"></i><b>4.1</b> Wave 1 - 2007</a></li>
+<li class="chapter" data-level="4.2" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-2---2009"><i class="fa fa-check"></i><b>4.2</b> Wave 2 - 2009</a></li>
+<li class="chapter" data-level="4.3" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-3---2011"><i class="fa fa-check"></i><b>4.3</b> Wave 3 - 2011</a></li>
+<li class="chapter" data-level="4.4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-4---2013"><i class="fa fa-check"></i><b>4.4</b> Wave 4 - 2013</a></li>
+<li class="chapter" data-level="4.5" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-5---2016"><i class="fa fa-check"></i><b>4.5</b> Wave 5 - 2016</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Streetlight and Transport Walking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="anova-test-for-streetlights" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> ANOVA test for streetlights<a href="anova-test-for-streetlights.html#anova-test-for-streetlights" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- Preparing data -->
+<!-- Plots of Streetlight counts -->
+<p><img src="_main_files/figure-html/plots-1.png" width="672" /><img src="_main_files/figure-html/plots-2.png" width="672" /></p>
+<!-- One way ANOVA test 1 -->
+<pre><code>##               Df    Sum Sq  Mean Sq F value Pr(&gt;F)    
+## habneigh1      1  39020897 39020897    3328 &lt;2e-16 ***
+## Residuals   8735 102430477    11726                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>ANOVA test for Log transformed streetlight counts
+<!-- One way ANOVA test 2 --></p>
+<pre><code>##               Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## habneigh1      1    730   729.6    1817 &lt;2e-16 ***
+## Residuals   8694   3491     0.4                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div id="analysis-without-outliers" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Analysis without outliers<a href="anova-test-for-streetlights.html#analysis-without-outliers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There were 13 CCDs with grater than 1000 streetlight counts, other CCDs have less than 800 streetlight counts.
+<!-- Plots of Streetlight counts without outliers -->
+<img src="_main_files/figure-html/plots-w/o-outliers-1.png" width="672" /><img src="_main_files/figure-html/plots-w/o-outliers-2.png" width="672" /></p>
+<!-- One way ANOVA test 3 -->
+<pre><code>##               Df   Sum Sq  Mean Sq F value Pr(&gt;F)    
+## habneigh1      1 36286020 36286020    3300 &lt;2e-16 ***
+## Residuals   8722 95897951    10995                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>ANOVA test for Log transformed streetlight counts
+<!-- One way ANOVA test 4 --></p>
+<pre><code>##               Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## habneigh1      1    710   709.8    1772 &lt;2e-16 ***
+## Residuals   8681   3478     0.4                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+<!-- ########################   Chapter 03  ################################ -->
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="descriptives.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cross-sectional-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-ANOVA.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
