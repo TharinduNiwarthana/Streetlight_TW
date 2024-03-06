@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Tharindu Bandara" />
 
 
-<meta name="date" content="2024-03-06" />
+<meta name="date" content="2024-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -122,8 +122,163 @@ set in the _output.yml file.</p>" />
             <section class="normal" id="section-">
 <div id="cross-sectional-analysis" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Cross Sectional Analysis<a href="cross-sectional-analysis.html#cross-sectional-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Excluded movers (n = 1916 participants), as most of them do not have streetlight counts after the 1st wave. Therefore, streetlight count measured at wave 1 used for this cross-sectional analysis at each wave.</p>
+<p>Transport walking:</p>
+<ul>
+<li>Walked or not (logistic regression)</li>
+<li>Minutes of walking (linear regression, only with walkers)</li>
+</ul>
+<p>BE attribute:</p>
+<ul>
+<li>Baseline streetlight counts</li>
+</ul>
+<p>Covariates:</p>
+<ul>
+<li>Sex</li>
+<li>Baseline age</li>
+<li>Baseline income level</li>
+<li>Baseline education</li>
+</ul>
+<!-- Preparing data -->
 <div id="wave-1---2007" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Wave 1 - 2007<a href="cross-sectional-analysis.html#wave-1---2007" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>## Warning in checkConv(attr(opt, &quot;derivs&quot;), opt$par, ctrl = control$checkConv, :
+## Model failed to converge with max|grad| = 0.0677391 (tol = 0.002, component 1)</code></pre>
+<pre><code>## Warning in checkConv(attr(opt, &quot;derivs&quot;), opt$par, ctrl = control$checkConv, : Model is nearly unidentifiable: very large eigenvalue
+##  - Rescale variables?;Model is nearly unidentifiable: large eigenvalue ratio
+##  - Rescale variables?</code></pre>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood (Laplace
+##   Approximation) [glmerMod]
+##  Family: binomial  ( logit )
+## Formula: walker ~ 1 + envlights1nb1 + envlights1nb1 * sex1 + age1 + edu2 +  
+##     edu3 + edu4 + occu2 + occu3 + occu4 + occu5 + occu6 + income2 +  
+##     income3 + income4 + income5 + income6 + nh_Q1 + nh_Q2 + nh_Q3 +  
+##     nh_Q4 + (1 | habneigh1)
+##    Data: df_ch4_07
+## 
+##      AIC      BIC   logLik deviance df.resid 
+##  10690.2  10852.6  -5322.1  10644.2     8599 
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.1750 -0.7189 -0.5583  1.0724  2.6664 
+## 
+## Random effects:
+##  Groups    Name        Variance Std.Dev.
+##  habneigh1 (Intercept) 0.1384   0.372   
+## Number of obs: 8622, groups:  habneigh1, 200
+## 
+## Fixed effects:
+##                      Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)         0.1282999  0.2766080   0.464 0.642767    
+## envlights1nb1       0.0014862  0.0006268   2.371 0.017743 *  
+## sex1               -0.2367527  0.1145370  -2.067 0.038730 *  
+## age1               -0.0150967  0.0037536  -4.022 5.77e-05 ***
+## edu2               -0.2909651  0.0824014  -3.531 0.000414 ***
+## edu3               -0.5456479  0.0772788  -7.061 1.66e-12 ***
+## edu4               -0.6079788  0.0661624  -9.189  &lt; 2e-16 ***
+## occu2               0.1971662  0.0729458   2.703 0.006873 ** 
+## occu3              -0.3101742  0.0873783  -3.550 0.000386 ***
+## occu4               0.0012232  0.1134397   0.011 0.991397    
+## occu5               0.0473297  0.1038047   0.456 0.648427    
+## occu6               0.2241313  0.0786770   2.849 0.004389 ** 
+## income2             0.1821762  0.0767648   2.373 0.017636 *  
+## income3             0.1950494  0.0892207   2.186 0.028805 *  
+## income4             0.1110298  0.0887244   1.251 0.210788    
+## income5             0.3167521  0.1076488   2.942 0.003256 ** 
+## income6            -0.0151571  0.0909649  -0.167 0.867664    
+## nh_Q1               0.2604480  0.1233588   2.111 0.034746 *  
+## nh_Q2               0.1191918  0.1171546   1.017 0.308968    
+## nh_Q3               0.0562959  0.1205436   0.467 0.640488    
+## nh_Q4               0.0010240  0.1118931   0.009 0.992699    
+## envlights1nb1:sex1  0.0002816  0.0003738   0.753 0.451212    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre><code>## 
+## Correlation matrix not shown by default, as p = 22 &gt; 12.
+## Use print(x, correlation=TRUE)  or
+##     vcov(x)        if you need it</code></pre>
+<pre><code>## optimizer (Nelder_Mead) convergence code: 0 (OK)
+## Model failed to converge with max|grad| = 0.0677391 (tol = 0.002, component 1)
+## Model is nearly unidentifiable: very large eigenvalue
+##  - Rescale variables?
+## Model is nearly unidentifiable: large eigenvalue ratio
+##  - Rescale variables?</code></pre>
+<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
+## Formula: TW_topC ~ 1 + envlights1nb1 + envlights1nb1 * sex1 + age1 + edu2 +  
+##     edu3 + edu4 + occu2 + occu3 + occu4 + occu5 + occu6 + income2 +  
+##     income3 + income4 + income5 + income6 + nh_Q1 + nh_Q2 + nh_Q3 +  
+##     nh_Q4 + (1 | habneigh1)
+##    Data: df_ch4_07_walkers
+## 
+## REML criterion at convergence: 36831.6
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -1.3737 -0.5503 -0.3005  0.1813  6.3691 
+## 
+## Random effects:
+##  Groups    Name        Variance Std.Dev.
+##  habneigh1 (Intercept)    56      7.484 
+##  Residual              13958    118.142 
+## Number of obs: 2983, groups:  habneigh1, 200
+## 
+## Fixed effects:
+##                     Estimate Std. Error t value
+## (Intercept)         57.49382   23.63056   2.433
+## envlights1nb1        0.13050    0.05151   2.533
+## sex1                20.11622   10.41987   1.931
+## age1                 0.01941    0.33949   0.057
+## edu2                -0.74062    7.48557  -0.099
+## edu3                -5.47313    7.15601  -0.765
+## edu4                -8.88328    6.01299  -1.477
+## occu2                1.31870    6.72004   0.196
+## occu3               16.56393    8.38685   1.975
+## occu4              -12.55409   10.95263  -1.146
+## occu5               -1.76451    9.72682  -0.181
+## occu6               15.49565    7.01383   2.209
+## income2             -3.10801    6.94062  -0.448
+## income3             -9.56399    8.08566  -1.183
+## income4              1.30367    8.17041   0.160
+## income5              1.92449    9.79962   0.196
+## income6             -2.68743    8.54181  -0.315
+## nh_Q1                8.38327    8.01754   1.046
+## nh_Q2               -2.54581    7.39242  -0.344
+## nh_Q3               11.05849    7.55730   1.463
+## nh_Q4               -1.80152    6.80436  -0.265
+## envlights1nb1:sex1  -0.06371    0.03231  -1.972</code></pre>
+<pre><code>## 
+## Correlation matrix not shown by default, as p = 22 &gt; 12.
+## Use print(x, correlation=TRUE)  or
+##     vcov(x)        if you need it</code></pre>
+<pre><code>## Analysis of Deviance Table (Type III Wald chisquare tests)
+## 
+## Response: TW_topC
+##                     Chisq Df Pr(&gt;Chisq)  
+## (Intercept)        5.9196  1    0.01497 *
+## envlights1nb1      6.4184  1    0.01129 *
+## sex1               3.7271  1    0.05354 .
+## age1               0.0033  1    0.95441  
+## edu2               0.0098  1    0.92119  
+## edu3               0.5850  1    0.44437  
+## edu4               2.1826  1    0.13958  
+## occu2              0.0385  1    0.84443  
+## occu3              3.9006  1    0.04827 *
+## occu4              1.3138  1    0.25171  
+## occu5              0.0329  1    0.85605  
+## occu6              4.8810  1    0.02715 *
+## income2            0.2005  1    0.65430  
+## income3            1.3991  1    0.23688  
+## income4            0.0255  1    0.87323  
+## income5            0.0386  1    0.84431  
+## income6            0.0990  1    0.75305  
+## nh_Q1              1.0933  1    0.29574  
+## nh_Q2              0.1186  1    0.73056  
+## nh_Q3              2.1412  1    0.14339  
+## nh_Q4              0.0701  1    0.79119  
+## envlights1nb1:sex1 3.8875  1    0.04865 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
 <div id="wave-2---2009" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Wave 2 - 2009<a href="cross-sectional-analysis.html#wave-2---2009" class="anchor-section" aria-label="Anchor link to header"></a></h2>
