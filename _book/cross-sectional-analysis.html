@@ -132,12 +132,14 @@ set in the _output.yml file.</p>" />
 <ul>
 <li>Baseline streetlight counts</li>
 </ul>
-<p>Covariates:</p>
+<p>Adjusted for:</p>
 <ul>
 <li>Sex</li>
 <li>Baseline age</li>
-<li>Baseline income level</li>
-<li>Baseline education</li>
+<li>Baseline education level (categorical)</li>
+<li>Baseline occupation level (categorical)</li>
+<li>Baseline income level (categorical)</li>
+<li>Baseline neighbourhood disadvantage quintiles (categorical)</li>
 </ul>
 <!-- Preparing data -->
 <div id="wave-1---2007" class="section level2 hasAnchor" number="4.1">
@@ -319,6 +321,63 @@ set in the _output.yml file.</p>" />
 </div>
 <div id="wave-3---2011" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Wave 3 - 2011<a href="cross-sectional-analysis.html#wave-3---2011" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood (Laplace
+##   Approximation) [glmerMod]
+##  Family: binomial  ( logit )
+## Formula: walker ~ 1 + envlights1nb1 + envlights1nb1 * sex1 + age1 + edu2 +  
+##     edu3 + edu4 + occu2 + occu3 + occu4 + occu5 + occu6 + income2 +  
+##     income3 + income4 + income5 + income6 + nh_Q1 + nh_Q2 + nh_Q3 +  
+##     nh_Q4 + (1 | habneigh1)
+##    Data: df_ch4_11
+## 
+##      AIC      BIC   logLik deviance df.resid 
+##   6370.1   6519.9  -3162.0   6324.1     4962 
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -1.8044 -0.7672 -0.5789  1.0651  2.8315 
+## 
+## Random effects:
+##  Groups    Name        Variance Std.Dev.
+##  habneigh1 (Intercept) 0.08922  0.2987  
+## Number of obs: 4985, groups:  habneigh1, 200
+## 
+## Fixed effects:
+##                      Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)         0.9700440  0.3566193   2.720  0.00653 ** 
+## envlights1nb1       0.0004529  0.0008108   0.559  0.57644    
+## sex1               -0.4435013  0.1485777  -2.985  0.00284 ** 
+## age1               -0.0210886  0.0049053  -4.299 1.71e-05 ***
+## edu2               -0.1571947  0.1059019  -1.484  0.13772    
+## edu3               -0.4335050  0.0998621  -4.341 1.42e-05 ***
+## edu4               -0.5502029  0.0853239  -6.448 1.13e-10 ***
+## occu2               0.0351214  0.0940281   0.374  0.70876    
+## occu3              -0.4790977  0.1131561  -4.234 2.30e-05 ***
+## occu4              -0.4149128  0.1493276  -2.779  0.00546 ** 
+## occu5               0.0498361  0.1238344   0.402  0.68736    
+## occu6               0.0282343  0.1064370   0.265  0.79080    
+## income2             0.0170361  0.0962441   0.177  0.85950    
+## income3            -0.0596929  0.1129977  -0.528  0.59731    
+## income4             0.0351746  0.1142810   0.308  0.75824    
+## income5             0.1541004  0.1399452   1.101  0.27083    
+## income6             0.0761503  0.1183080   0.644  0.51980    
+## nh_Q1               0.2926281  0.1344466   2.177  0.02952 *  
+## nh_Q2               0.1983689  0.1233886   1.608  0.10791    
+## nh_Q3               0.1324931  0.1263554   1.049  0.29437    
+## nh_Q4               0.0114309  0.1146811   0.100  0.92060    
+## envlights1nb1:sex1  0.0009988  0.0004901   2.038  0.04154 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre><code>## 
+## Correlation matrix not shown by default, as p = 22 &gt; 12.
+## Use print(x, correlation=TRUE)  or
+##     vcov(x)        if you need it</code></pre>
+<pre><code>## optimizer (Nelder_Mead) convergence code: 0 (OK)
+## Model failed to converge with max|grad| = 0.0466184 (tol = 0.002, component 1)
+## Model is nearly unidentifiable: very large eigenvalue
+##  - Rescale variables?
+## Model is nearly unidentifiable: large eigenvalue ratio
+##  - Rescale variables?</code></pre>
 <pre><code>## boundary (singular) fit: see help(&#39;isSingular&#39;)</code></pre>
 <pre><code>## Analysis of Deviance Table (Type III Wald chisquare tests)
 ## 
