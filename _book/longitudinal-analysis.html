@@ -6,30 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Longitudinal Analysis | Streetlight and Transport Walking</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Longitudinal Analysis | Streetlight and Transport Walking" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 5 Longitudinal Analysis | Streetlight and Transport Walking" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
   
 
 <meta name="author" content="Tharindu Bandara" />
 
 
-<meta name="date" content="2024-03-07" />
+<meta name="date" content="2024-04-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,11 +58,13 @@ set in the _output.yml file.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -91,15 +93,14 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="2.2" data-path="streetlight-count.html"><a href="streetlight-count.html#one-way-anova-tests"><i class="fa fa-check"></i><b>2.2</b> One-way ANOVA tests</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="sample-profile.html"><a href="sample-profile.html"><i class="fa fa-check"></i><b>3</b> Sample Profile</a></li>
-<li class="chapter" data-level="4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html"><i class="fa fa-check"></i><b>4</b> Cross Sectional Analysis</a>
+<li class="chapter" data-level="4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html"><i class="fa fa-check"></i><b>4</b> Cross Sectional Analysis</a></li>
+<li class="chapter" data-level="5" data-path="longitudinal-analysis.html"><a href="longitudinal-analysis.html"><i class="fa fa-check"></i><b>5</b> Longitudinal Analysis</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-1---2007"><i class="fa fa-check"></i><b>4.1</b> Wave 1 - 2007</a></li>
-<li class="chapter" data-level="4.2" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-2---2009"><i class="fa fa-check"></i><b>4.2</b> Wave 2 - 2009</a></li>
-<li class="chapter" data-level="4.3" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-3---2011"><i class="fa fa-check"></i><b>4.3</b> Wave 3 - 2011</a></li>
-<li class="chapter" data-level="4.4" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-4---2013"><i class="fa fa-check"></i><b>4.4</b> Wave 4 - 2013</a></li>
-<li class="chapter" data-level="4.5" data-path="cross-sectional-analysis.html"><a href="cross-sectional-analysis.html#wave-5---2016"><i class="fa fa-check"></i><b>4.5</b> Wave 5 - 2016</a></li>
+<li class="chapter" data-level="5.1" data-path="longitudinal-analysis.html"><a href="longitudinal-analysis.html#plots"><i class="fa fa-check"></i><b>5.1</b> Plots</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="longitudinal-analysis.html"><a href="longitudinal-analysis.html#proportion-of-transport-walkers-vs-streetlight-count-by-sex"><i class="fa fa-check"></i><b>5.1.1</b> Proportion of transport walkers Vs streetlight count by sex</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="longitudinal-analysis.html"><a href="longitudinal-analysis.html"><i class="fa fa-check"></i><b>5</b> Longitudinal Analysis</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -122,7 +123,25 @@ set in the _output.yml file.</p>" />
             <section class="normal" id="section-">
 <div id="longitudinal-analysis" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Longitudinal Analysis<a href="longitudinal-analysis.html#longitudinal-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- ## Data preparation -->
+<!-- Preparing data -->
+<!-- -   Excluded the participants who moved residence in between surveys -->
+<!-- -   Excluded the respondents who were not the same person at each wave -->
+<!-- -   Excluded the respondents who had missing values for transport walking for all waves -->
+<!-- <!-- -   Excluded the participants who had missing values for education at baseline -->
+<p>–&gt;</p>
+<!-- All observations with missing streetlight have missing transport walking values (n = 15477 observations), suggesting these caused because of dropouts. -->
+<!-- "length(which(is.na(df_ch5_L$trwlktot) & is.na(df_ch5_L$envlights1nb)))" -->
+<div id="plots" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Plots<a href="longitudinal-analysis.html#plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="proportion-of-transport-walkers-vs-streetlight-count-by-sex" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Proportion of transport walkers Vs streetlight count by sex<a href="longitudinal-analysis.html#proportion-of-transport-walkers-vs-streetlight-count-by-sex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!-- walker proportions vs SL count plots -->
+<p><img src="_main_files/figure-html/walkers.Prop_vs_SL_plot-1.png" width="672" /><img src="_main_files/figure-html/walkers.Prop_vs_SL_plot-2.png" width="672" /><img src="_main_files/figure-html/walkers.Prop_vs_SL_plot-3.png" width="672" /><img src="_main_files/figure-html/walkers.Prop_vs_SL_plot-4.png" width="672" /><img src="_main_files/figure-html/walkers.Prop_vs_SL_plot-5.png" width="672" /></p>
+<!-- ## Change in streetlight and change in transport walking -->
 
+</div>
+</div>
 </div>
             </section>
 
@@ -161,7 +180,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Cross-Sectional-Analysis.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-Longitudinal-Analysis.Rmd",
 "text": "Edit"
 },
 "history": {

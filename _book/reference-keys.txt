@@ -6,9 +6,6 @@ distribution
 one-way-anova-tests
 sample-profile
 cross-sectional-analysis
-wave-1---2007
-wave-2---2009
-wave-3---2011
-wave-4---2013
-wave-5---2016
 longitudinal-analysis
+plots
+proportion-of-transport-walkers-vs-streetlight-count-by-sex
